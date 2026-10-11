@@ -1,0 +1,473 @@
+{
+  "training_timestamp": "2026-10-10T18:00:53.075323",
+  "random_state": 42,
+  "dataset_info": {
+    "schema": "checkup",
+    "raw_shape": [
+      3000,
+      19
+    ],
+    "raw_columns": [
+      "id",
+      "age",
+      "sex",
+      "systolic_bp",
+      "diastolic_bp",
+      "total_cholesterol",
+      "ldl",
+      "hdl",
+      "triglycerides",
+      "fasting_blood_sugar",
+      "hba1c",
+      "height_cm",
+      "weight_kg",
+      "bmi",
+      "smoking_status",
+      "diabetes_history",
+      "family_history_heart_disease",
+      "physical_activity",
+      "heart_disease_label"
+    ],
+    "feature_columns": [
+      "age",
+      "systolic_bp",
+      "diastolic_bp",
+      "total_cholesterol",
+      "ldl",
+      "hdl",
+      "triglycerides",
+      "fasting_blood_sugar",
+      "hba1c",
+      "height_cm",
+      "weight_kg",
+      "bmi",
+      "sex",
+      "smoking_status",
+      "diabetes_history",
+      "family_history_heart_disease",
+      "physical_activity"
+    ],
+    "numerical_features": [
+      "age",
+      "systolic_bp",
+      "diastolic_bp",
+      "total_cholesterol",
+      "ldl",
+      "hdl",
+      "triglycerides",
+      "fasting_blood_sugar",
+      "hba1c",
+      "height_cm",
+      "weight_kg",
+      "bmi"
+    ],
+    "categorical_features": [
+      "sex",
+      "smoking_status",
+      "diabetes_history",
+      "family_history_heart_disease",
+      "physical_activity"
+    ],
+    "missing_counts": {
+      "id": 0,
+      "age": 0,
+      "sex": 0,
+      "systolic_bp": 0,
+      "diastolic_bp": 0,
+      "total_cholesterol": 0,
+      "ldl": 83,
+      "hdl": 0,
+      "triglycerides": 107,
+      "fasting_blood_sugar": 52,
+      "hba1c": 183,
+      "height_cm": 0,
+      "weight_kg": 0,
+      "bmi": 0,
+      "smoking_status": 0,
+      "diabetes_history": 0,
+      "family_history_heart_disease": 0,
+      "physical_activity": 0,
+      "heart_disease_label": 0
+    },
+    "duplicate_count": 0,
+    "target_distribution_raw": {
+      "0": 1720,
+      "1": 1280
+    }
+  },
+  "train_samples": 2400,
+  "test_samples": 600,
+  "feature_schema": {
+    "all_features": [
+      "age",
+      "systolic_bp",
+      "diastolic_bp",
+      "total_cholesterol",
+      "ldl",
+      "hdl",
+      "triglycerides",
+      "fasting_blood_sugar",
+      "hba1c",
+      "height_cm",
+      "weight_kg",
+      "bmi",
+      "sex",
+      "smoking_status",
+      "diabetes_history",
+      "family_history_heart_disease",
+      "physical_activity"
+    ],
+    "numerical_features": [
+      "age",
+      "systolic_bp",
+      "diastolic_bp",
+      "total_cholesterol",
+      "ldl",
+      "hdl",
+      "triglycerides",
+      "fasting_blood_sugar",
+      "hba1c",
+      "height_cm",
+      "weight_kg",
+      "bmi"
+    ],
+    "categorical_features": [
+      "sex",
+      "smoking_status",
+      "diabetes_history",
+      "family_history_heart_disease",
+      "physical_activity"
+    ]
+  },
+  "best_model_name": "Logistic Regression",
+  "hyperparameter_tuning_enabled": true,
+  "comparison_table": [
+    {
+      "Model": "Logistic Regression",
+      "Accuracy": 67.5,
+      "Precision": 63.56,
+      "Recall": 55.86,
+      "Specificity": 76.16,
+      "F1 Score": 59.46,
+      "ROC-AUC": 75.26,
+      "CV_Accuracy_Mean": 70.92,
+      "CV_F1_Mean": 63.95,
+      "Tuned_Parameters": {
+        "classifier__C": 5.0
+      }
+    },
+    {
+      "Model": "Random Forest",
+      "Accuracy": 66.5,
+      "Precision": 63.29,
+      "Recall": 51.17,
+      "Specificity": 77.91,
+      "F1 Score": 56.59,
+      "ROC-AUC": 72.52,
+      "CV_Accuracy_Mean": 69.04,
+      "CV_F1_Mean": 60.1,
+      "Tuned_Parameters": {
+        "classifier__max_depth": 8,
+        "classifier__n_estimators": 50
+      }
+    },
+    {
+      "Model": "Decision Tree",
+      "Accuracy": 64.33,
+      "Precision": 59.81,
+      "Recall": 50.0,
+      "Specificity": 75.0,
+      "F1 Score": 54.47,
+      "ROC-AUC": 66.8,
+      "CV_Accuracy_Mean": 65.08,
+      "CV_F1_Mean": 54.86,
+      "Tuned_Parameters": {
+        "classifier__max_depth": 5,
+        "classifier__min_samples_split": 5
+      }
+    }
+  ],
+  "model_details": {
+    "Logistic Regression": {
+      "test_metrics": {
+        "Accuracy": 67.5,
+        "Precision": 63.56,
+        "Recall": 55.86,
+        "Specificity": 76.16,
+        "F1 Score": 59.46,
+        "ROC-AUC": 75.26,
+        "PR-AUC": 70.1
+      },
+      "confusion_matrix": {
+        "matrix": [
+          [
+            262,
+            82
+          ],
+          [
+            113,
+            143
+          ]
+        ],
+        "labels": [
+          "No Disease",
+          "Disease Indicated"
+        ],
+        "total": 600,
+        "tn": 262,
+        "fp": 82,
+        "fn": 113,
+        "tp": 143,
+        "tn_pct": 43.7,
+        "fp_pct": 13.7,
+        "fn_pct": 18.8,
+        "tp_pct": 23.8
+      },
+      "feature_importance": {
+        "aggregated": {
+          "diabetes_history": 0.1563,
+          "family_history_heart_disease": 0.1278,
+          "age": 0.1244,
+          "physical_activity": 0.0943,
+          "total_cholesterol": 0.0824,
+          "hdl": 0.0784,
+          "smoking_status": 0.0705,
+          "sex": 0.0633,
+          "systolic_bp": 0.0476,
+          "triglycerides": 0.035,
+          "bmi": 0.0304,
+          "hba1c": 0.0291,
+          "weight_kg": 0.0235,
+          "fasting_blood_sugar": 0.0204,
+          "height_cm": 0.0061,
+          "ldl": 0.0059,
+          "diastolic_bp": 0.0047
+        },
+        "raw": {
+          "num__age": 0.1244,
+          "num__systolic_bp": 0.0476,
+          "num__diastolic_bp": 0.0047,
+          "num__total_cholesterol": 0.0824,
+          "num__ldl": 0.0059,
+          "num__hdl": 0.0784,
+          "num__triglycerides": 0.035,
+          "num__fasting_blood_sugar": 0.0204,
+          "num__hba1c": 0.0291,
+          "num__height_cm": 0.0061,
+          "num__weight_kg": 0.0235,
+          "num__bmi": 0.0304,
+          "cat__sex_Female": 0.0282,
+          "cat__sex_Male": 0.0351,
+          "cat__smoking_status_Current": 0.0387,
+          "cat__smoking_status_Former": 0.0087,
+          "cat__smoking_status_Never": 0.023,
+          "cat__diabetes_history_false": 0.0747,
+          "cat__diabetes_history_true": 0.0816,
+          "cat__family_history_heart_disease_false": 0.0604,
+          "cat__family_history_heart_disease_true": 0.0673,
+          "cat__physical_activity_Active": 0.0155,
+          "cat__physical_activity_Moderate": 0.0282,
+          "cat__physical_activity_Sedentary": 0.0506
+        },
+        "is_coef": true
+      },
+      "cv_metrics": {
+        "accuracy_mean": 70.92,
+        "accuracy_std": 1.36,
+        "f1_mean": 63.95,
+        "f1_std": 1.54
+      },
+      "best_params": {
+        "classifier__C": 5.0
+      }
+    },
+    "Decision Tree": {
+      "test_metrics": {
+        "Accuracy": 64.33,
+        "Precision": 59.81,
+        "Recall": 50.0,
+        "Specificity": 75.0,
+        "F1 Score": 54.47,
+        "ROC-AUC": 66.8,
+        "PR-AUC": 56.69
+      },
+      "confusion_matrix": {
+        "matrix": [
+          [
+            258,
+            86
+          ],
+          [
+            128,
+            128
+          ]
+        ],
+        "labels": [
+          "No Disease",
+          "Disease Indicated"
+        ],
+        "total": 600,
+        "tn": 258,
+        "fp": 86,
+        "fn": 128,
+        "tp": 128,
+        "tn_pct": 43.0,
+        "fp_pct": 14.3,
+        "fn_pct": 21.3,
+        "tp_pct": 21.3
+      },
+      "feature_importance": {
+        "aggregated": {
+          "age": 0.3587,
+          "weight_kg": 0.1977,
+          "total_cholesterol": 0.1114,
+          "systolic_bp": 0.0941,
+          "hdl": 0.0877,
+          "fasting_blood_sugar": 0.04,
+          "triglycerides": 0.0371,
+          "ldl": 0.0336,
+          "sex": 0.0146,
+          "diabetes_history": 0.0126,
+          "hba1c": 0.0124,
+          "diastolic_bp": 0.0,
+          "height_cm": 0.0,
+          "bmi": 0.0,
+          "smoking_status": 0.0,
+          "family_history_heart_disease": 0.0,
+          "physical_activity": 0.0
+        },
+        "raw": {
+          "num__age": 0.3587,
+          "num__systolic_bp": 0.0941,
+          "num__diastolic_bp": 0.0,
+          "num__total_cholesterol": 0.1114,
+          "num__ldl": 0.0336,
+          "num__hdl": 0.0877,
+          "num__triglycerides": 0.0371,
+          "num__fasting_blood_sugar": 0.04,
+          "num__hba1c": 0.0124,
+          "num__height_cm": 0.0,
+          "num__weight_kg": 0.1977,
+          "num__bmi": 0.0,
+          "cat__sex_Female": 0.0,
+          "cat__sex_Male": 0.0146,
+          "cat__smoking_status_Current": 0.0,
+          "cat__smoking_status_Former": 0.0,
+          "cat__smoking_status_Never": 0.0,
+          "cat__diabetes_history_false": 0.0126,
+          "cat__diabetes_history_true": 0.0,
+          "cat__family_history_heart_disease_false": 0.0,
+          "cat__family_history_heart_disease_true": 0.0,
+          "cat__physical_activity_Active": 0.0,
+          "cat__physical_activity_Moderate": 0.0,
+          "cat__physical_activity_Sedentary": 0.0
+        },
+        "is_coef": false
+      },
+      "cv_metrics": {
+        "accuracy_mean": 65.08,
+        "accuracy_std": 0.88,
+        "f1_mean": 54.86,
+        "f1_std": 2.19
+      },
+      "best_params": {
+        "classifier__max_depth": 5,
+        "classifier__min_samples_split": 5
+      }
+    },
+    "Random Forest": {
+      "test_metrics": {
+        "Accuracy": 66.5,
+        "Precision": 63.29,
+        "Recall": 51.17,
+        "Specificity": 77.91,
+        "F1 Score": 56.59,
+        "ROC-AUC": 72.52,
+        "PR-AUC": 65.58
+      },
+      "confusion_matrix": {
+        "matrix": [
+          [
+            268,
+            76
+          ],
+          [
+            125,
+            131
+          ]
+        ],
+        "labels": [
+          "No Disease",
+          "Disease Indicated"
+        ],
+        "total": 600,
+        "tn": 268,
+        "fp": 76,
+        "fn": 125,
+        "tp": 131,
+        "tn_pct": 44.7,
+        "fp_pct": 12.7,
+        "fn_pct": 20.8,
+        "tp_pct": 21.8
+      },
+      "feature_importance": {
+        "aggregated": {
+          "age": 0.1557,
+          "weight_kg": 0.0981,
+          "systolic_bp": 0.0893,
+          "hdl": 0.0758,
+          "total_cholesterol": 0.0731,
+          "triglycerides": 0.0706,
+          "bmi": 0.0687,
+          "ldl": 0.0668,
+          "diastolic_bp": 0.054,
+          "fasting_blood_sugar": 0.0501,
+          "height_cm": 0.0464,
+          "hba1c": 0.0325,
+          "family_history_heart_disease": 0.0271,
+          "physical_activity": 0.0265,
+          "smoking_status": 0.0225,
+          "diabetes_history": 0.0224,
+          "sex": 0.0204
+        },
+        "raw": {
+          "num__age": 0.1557,
+          "num__systolic_bp": 0.0893,
+          "num__diastolic_bp": 0.054,
+          "num__total_cholesterol": 0.0731,
+          "num__ldl": 0.0668,
+          "num__hdl": 0.0758,
+          "num__triglycerides": 0.0706,
+          "num__fasting_blood_sugar": 0.0501,
+          "num__hba1c": 0.0325,
+          "num__height_cm": 0.0464,
+          "num__weight_kg": 0.0981,
+          "num__bmi": 0.0687,
+          "cat__sex_Female": 0.0128,
+          "cat__sex_Male": 0.0076,
+          "cat__smoking_status_Current": 0.0087,
+          "cat__smoking_status_Former": 0.0047,
+          "cat__smoking_status_Never": 0.0091,
+          "cat__diabetes_history_false": 0.0133,
+          "cat__diabetes_history_true": 0.009,
+          "cat__family_history_heart_disease_false": 0.0134,
+          "cat__family_history_heart_disease_true": 0.0137,
+          "cat__physical_activity_Active": 0.0053,
+          "cat__physical_activity_Moderate": 0.0094,
+          "cat__physical_activity_Sedentary": 0.0118
+        },
+        "is_coef": false
+      },
+      "cv_metrics": {
+        "accuracy_mean": 69.04,
+        "accuracy_std": 1.24,
+        "f1_mean": 60.1,
+        "f1_std": 1.84
+      },
+      "best_params": {
+        "classifier__max_depth": 8,
+        "classifier__n_estimators": 50
+      }
+    }
+  }
+}

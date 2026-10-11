@@ -1,0 +1,20 @@
+column_name,description,data_type,unit,mandatory_or_optional,acceptable_range,missing_value_handling,clinical_relevance
+id,Unique record identifier,integer,None,Mandatory,1 - 3000,Not allowed (unique key),Patient record tracking only (excluded from modeling)
+age,Patient age in completed years,integer,years,Mandatory,18 - 100,Impute with median,Major non-modifiable cardiovascular risk factor
+sex,Biological sex,string,None,Mandatory,Male or Female,Impute with mode,Higher baseline CAD incidence in males; post-menopausal risk in females
+systolic_bp,Systolic blood pressure,integer,mmHg,Mandatory,70 - 240,Impute with median,Primary indicator of vascular resistance and arterial stiffness
+diastolic_bp,Diastolic blood pressure,integer,mmHg,Mandatory,40 - 140,Impute with median,Indicator of peripheral vascular resistance
+total_cholesterol,Serum total cholesterol,integer,mg/dL,Mandatory,80 - 450,Impute with median,Overall circulating atherogenic lipid burden
+ldl,Low-density lipoprotein cholesterol,integer,mg/dL,Optional,30 - 300,Impute with median or Friedewald estimation,Primary atherogenic lipoprotein driving plaque formation
+hdl,High-density lipoprotein cholesterol,integer,mg/dL,Mandatory,15 - 120,Impute with median,Protective reverse cholesterol transport lipoprotein
+triglycerides,Serum fasting triglycerides,integer,mg/dL,Optional,30 - 600,Impute with median,Independent marker of atherogenic remnant particles and metabolic syndrome
+fasting_blood_sugar,Fasting plasma glucose,float,mg/dL,Mandatory,50 - 350,Impute with median,Glycemic indicator for prediabetes and impaired fasting glucose
+hba1c,Glycated hemoglobin,float,percentage (%),Optional,3.5 - 15.0,Impute with median or glucose-derived estimate,Long-term 3-month average glycemic control
+height_cm,Standing height,float,cm,Mandatory,120.0 - 220.0,Impute with sex-stratified median,Anthropometric measure for body mass index calculation
+weight_kg,Body weight,float,kg,Mandatory,30.0 - 250.0,Impute with median,Anthropometric measure for body mass index calculation
+bmi,Body Mass Index (weight / (height/100)^2),float,kg/m²,Mandatory,14.0 - 60.0,Calculated from height and weight,Surrogate marker for adiposity and cardiometabolic stress
+smoking_status,Tobacco smoking history,string,None,Mandatory,Never; Former; Current,Impute with mode (Never),Causes endothelial dysfunction and accelerates atherosclerosis
+diabetes_history,Diagnosed history of diabetes mellitus,boolean,None,Mandatory,TRUE or FALSE,Impute with FALSE (or derived from glucose/HbA1c),Strong independent cardiovascular disease risk multiplier
+family_history_heart_disease,First-degree family history of premature CAD,boolean,None,Mandatory,TRUE or FALSE,Impute with FALSE,Captures inherited polygenic and shared environmental cardiovascular risk
+physical_activity,Weekly aerobic exercise tier,string,None,Mandatory,Sedentary; Moderate; Active,Impute with Moderate,Aerobic activity improves lipid profile and autonomic tone
+heart_disease_label,Cardiovascular disease indication or documented event,integer,binary (0/1),Target,0 (No indication) or 1 (Indication present),Excluded from features (supervised target),Target classification outcome based on multivariable epidemiological risk criteria
